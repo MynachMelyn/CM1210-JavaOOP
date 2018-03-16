@@ -1,0 +1,4 @@
+Michael Collins|C123456|Computer Science|CM2536|16|Stuttgarter Straße|Cathays|CF2HR
+Joe Penning|C078992|Engineering|EN2337|1|Charcoal Street|Brovallen|SW2JO
+Samuel Adams|C654321|History|HS6540|3|Senghenydd Court|Cathays|CF3PM
+Morgan Parry|C845529|Music|MU8743|45a|Big Street|Bangor|BN7GH
