@@ -1,13 +1,17 @@
 package com.course;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StudentInfo {
     // fields
-    private String name, studentID, courseName, courseID, houseNumber, streetName, town, postcode;
-    private ArrayList<String> info;
+    private StringBuffer name = new StringBuffer(""), studentID = new StringBuffer(""),
+            courseName = new StringBuffer(""), courseID = new StringBuffer(""),
+            houseNumber = new StringBuffer(""), streetName = new StringBuffer(""),
+            town = new StringBuffer(""), postcode = new StringBuffer("");
+    private ArrayList<StringBuffer> info;
 
 
     // methods
@@ -24,110 +28,124 @@ public class StudentInfo {
     }
 
     public String getName() {
-        return name;
+        return name.toString();
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws IOException {
         final Pattern pattern = Pattern.compile("[A-Za-z ]{1,16}");
         if(!pattern.matcher(name).matches()) {
             displayError("Invalid input for student name.");
+            for (char ch : name.toCharArray()) {
+                System.out.println((int) ch);
+            }
         } else {
-            this.name = name;
+            this.name.delete(0, name.length());
+            this.name.append(name);
         }
     }
 
     public String getStudentID() {
-        return studentID;
+        return studentID.toString();
     }
 
-    public void setStudentID(String studentID) {
+    public void setStudentID(String studentID) throws IOException {
         final Pattern pattern = Pattern.compile("[Cc]{1}[\\d]{6}");
         if(!pattern.matcher(studentID).matches()) {
             displayError("Invalid input for student ID.");
         } else {
-            this.studentID = studentID;
+            this.studentID.delete(0, studentID.length());
+            this.studentID.append(studentID);
         }
     }
 
     public String getCourseName() {
-        return courseName;
+        return courseName.toString();
     }
 
-    public void setCourseName(String courseName) {
+    public void setCourseName(String courseName) throws IOException {
         final Pattern pattern = Pattern.compile("[A-Za-z ]{1,}");
         if(!pattern.matcher(courseName).matches()) {
             displayError("Invalid input for course name.");
         } else {
-            this.courseName = courseName;
+            this.courseName.delete(0, courseName.length());
+            this.courseName.append(courseName);
         }
     }
 
     public String getCourseID() {
-        return courseID;
+        return courseID.toString();
     }
 
-    public void setCourseID(String courseID) {
+    public void setCourseID(String courseID) throws IOException {
         final Pattern pattern = Pattern.compile("[A-Za-z]{2}[\\d]{4}");
         if(!pattern.matcher(courseID).matches()) {
             displayError("Invalid input for course ID.");
         } else {
-            this.courseID = courseID;
+            this.courseID.delete(0, courseID.length());
+            this.courseID.append(courseID);
         }
     }
 
     public String getHouseNumber() {
-        return houseNumber;
+        return houseNumber.toString();
     }
 
-    public void setHouseNumber(String houseNumber) {
+    public void setHouseNumber(String houseNumber) throws IOException {
         final Pattern pattern = Pattern.compile("[\\d]+[A-Za-z]*");
         if(!pattern.matcher(houseNumber).matches()) {
             displayError("Invalid input for house number.");
         } else {
-            this.houseNumber = houseNumber;
-        }
+            this.houseNumber.delete(0, houseNumber.length());
+            this.houseNumber.append(houseNumber);        }
     }
 
     public String getStreetName() {
-        return streetName;
+        return streetName.toString();
     }
 
-    public void setStreetName(String streetName) {
+    public void setStreetName(String streetName) throws IOException {
         final Pattern pattern = Pattern.compile("[ßA-Za-z ]+");
         if(!pattern.matcher(streetName).matches()) {
             displayError("Invalid input for street name.");
         } else {
-            this.streetName = streetName;
+            this.streetName.delete(0, streetName.length());
+            this.streetName.append(streetName);
         }
     }
 
     public String getTown() {
-        return town;
+        return town.toString();
     }
 
-    public void setTown(String town) {
+    public void setTown(String town) throws IOException {
         final Pattern pattern = Pattern.compile("[A-Za-z ]+");
         if(!pattern.matcher(town).matches()) {
             displayError("Invalid input for town name.");
         } else {
-            this.town = town;
+            this.town.delete(0, town.length());
+            this.town.append(town);
         }
     }
 
     public String getPostcode() {
-        return postcode;
+        return postcode.toString();
     }
 
-    public void setPostcode(String postcode) {
+    public void setPostcode(String postcode) throws IOException {
         final Pattern pattern = Pattern.compile("[A-Z]{2}\\d{1}[A-Z]{2}");
         if(!pattern.matcher(postcode).matches()) {
             displayError("Invalid input for postcode.");
         } else {
-            this.postcode = postcode;
-        }
+            this.postcode.delete(0, postcode.length());
+            this.postcode.append(postcode);        }
     }
 
-    private void displayError(String message){
+    private void displayError(String message) throws IOException {
         System.out.println(message);
+        throw new IOException("Invalid input. Exception raised.");
+    }
+
+    public  ArrayList<StringBuffer> getInfo(){
+        return info;
     }
 }
