@@ -2,7 +2,7 @@ package com;
 
 import java.util.Scanner;
 
-public class Main {
+public class Generator {
 
     public static void main(String[] args) {
         String input = "";
@@ -20,10 +20,19 @@ public class Main {
 
             }
         }
-        magicSquare(value);
+        int[][] square = magicSquare(value);
+        int n = square.length;
+        System.out.println("Magic Square of " + n);
+        System.out.println("Necessary sum of each row/col: " + n*(n*n + 1)/2);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(square[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 
-    private static void magicSquare(int n) {
+    public static int[][] magicSquare(int n) {
         // Provided algorithm leads to -1 being used as an index, so here's one that works.
         int[][] magicSquare = new int[n][n];
         int x = n/2;
@@ -48,13 +57,6 @@ public class Main {
             }
         }
 
-        System.out.println("Magic Square of " + n);
-        System.out.println("Necessary sum of each row/col: " + n*(n*n + 1)/2);
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(magicSquare[i][j] + " ");
-            }
-            System.out.println();
-        }
+        return magicSquare;
     }
 }
