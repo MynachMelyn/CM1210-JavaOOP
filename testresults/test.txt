@@ -1,0 +1,721 @@
+Commands are comma separated.
+
+Enter command: 
+
+
+Using Command: notrecognisedcommand 
+Command not recognised.
+
+Enter command: 
+
+
+Using Command: spaced command that doesn't work 
+Command not recognised.
+
+Enter command: 
+
+
+Using Command: comma separated command that doesn't work 
+Command not recognised.
+
+Enter command: 
+
+
+Using Command: load filethatdoesnotexist 
+A file ending in .txt or .bin must be specified.
+Enter command: 
+
+
+Using Command: load studenten.txt 
+Enter command: 
+
+
+Using Command: display 
+Adam Burgess
+C123456
+ComputerScience
+CM2536
+16
+Stuttgarter Straße
+Cathays
+CF2HR
+==============================
+Joe Penning
+C078992
+Engineering
+EN2337
+1
+Charcoal Street
+Brovallen
+SW2JO
+==============================
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Morgan Parry
+C845529
+Music
+MU8743
+45a
+Big Street
+Bangor
+BN7GH
+==============================
+Kossak Alshamid
+C854232
+Music
+MU8742
+4c
+Small Street
+Leamington Spa
+CO9CM
+==============================
+Ajay Ghale
+C620572
+Politics
+PO8365
+55
+The Way
+Balangar
+BN8FG
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: display street Stuttgarter Straße 
+Adam Burgess
+C123456
+ComputerScience
+CM2536
+16
+Stuttgarter Straße
+Cathays
+CF2HR
+==============================
+Enter command: 
+
+
+Using Command: display street Senghenydd Court 
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: display street Doesn't Exist Lane 
+Enter command: 
+
+
+Using Command: display course Music 
+Morgan Parry
+C845529
+Music
+MU8743
+45a
+Big Street
+Bangor
+BN7GH
+==============================
+Kossak Alshamid
+C854232
+Music
+MU8742
+4c
+Small Street
+Leamington Spa
+CO9CM
+==============================
+Enter command: 
+
+
+Using Command: display postcode CF3PM 
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: display house 12e 
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: display town Cathays 
+Adam Burgess
+C123456
+ComputerScience
+CM2536
+16
+Stuttgarter Straße
+Cathays
+CF2HR
+==============================
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: display 3 to 6 
+Morgan Parry
+C845529
+Music
+MU8743
+45a
+Big Street
+Bangor
+BN7GH
+==============================
+Kossak Alshamid
+C854232
+Music
+MU8742
+4c
+Small Street
+Leamington Spa
+CO9CM
+==============================
+Ajay Ghale
+C620572
+Politics
+PO8365
+55
+The Way
+Balangar
+BN8FG
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: display invalidargument 
+Adam Burgess
+C123456
+ComputerScience
+CM2536
+16
+Stuttgarter Straße
+Cathays
+CF2HR
+==============================
+Joe Penning
+C078992
+Engineering
+EN2337
+1
+Charcoal Street
+Brovallen
+SW2JO
+==============================
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Morgan Parry
+C845529
+Music
+MU8743
+45a
+Big Street
+Bangor
+BN7GH
+==============================
+Kossak Alshamid
+C854232
+Music
+MU8742
+4c
+Small Street
+Leamington Spa
+CO9CM
+==============================
+Ajay Ghale
+C620572
+Politics
+PO8365
+55
+The Way
+Balangar
+BN8FG
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: delete 4 
+Enter command: 
+
+
+Using Command: display 
+Adam Burgess
+C123456
+ComputerScience
+CM2536
+16
+Stuttgarter Straße
+Cathays
+CF2HR
+==============================
+Joe Penning
+C078992
+Engineering
+EN2337
+1
+Charcoal Street
+Brovallen
+SW2JO
+==============================
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Morgan Parry
+C845529
+Music
+MU8743
+45a
+Big Street
+Bangor
+BN7GH
+==============================
+Ajay Ghale
+C620572
+Politics
+PO8365
+55
+The Way
+Balangar
+BN8FG
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Enter command: 
+
+
+Using Command: add 
+Enter name:
+Enter student ID:
+Enter course name:
+Enter course ID:
+Enter house number:
+Enter street:
+Enter town:
+Enter postcode:
+Enter command: 
+
+
+Using Command: add 
+Enter name:
+Invalid input for student name. INVALID FIRST NAAAAAAME
+Invalid input. Exception raised.
+Invalid input for student name. 
+Invalid data entered; Student addition cancelled.
+Enter command: 
+
+
+Using Command: save 
+Enter command: 
+
+
+Using Command: create invalidfile png 
+Error saving file; invalid file type.
+Enter command: 
+
+
+Using Command: create testfilebinary bin 
+Enter command: 
+
+
+Using Command: create testfiletext txt 
+Enter command: 
+
+
+Using Command: load testfiletext.txt 
+Enter command: 
+
+
+Using Command: display 
+Adam Burgess
+C123456
+ComputerScience
+CM2536
+16
+Stuttgarter Straße
+Cathays
+CF2HR
+==============================
+Joe Penning
+C078992
+Engineering
+EN2337
+1
+Charcoal Street
+Brovallen
+SW2JO
+==============================
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Morgan Parry
+C845529
+Music
+MU8743
+45a
+Big Street
+Bangor
+BN7GH
+==============================
+Ajay Ghale
+C620572
+Politics
+PO8365
+55
+The Way
+Balangar
+BN8FG
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Test Testington
+C123456
+Testing
+TE9999
+1a
+Beep Street
+Testsworth
+TE5TS
+==============================
+Enter command: 
+
+
+Using Command: load testfilebin.bin 
+Error; file does not exist.
+Enter command: 
+
+
+Using Command: display 
+Adam Burgess
+C123456
+ComputerScience
+CM2536
+16
+Stuttgarter Straße
+Cathays
+CF2HR
+==============================
+Joe Penning
+C078992
+Engineering
+EN2337
+1
+Charcoal Street
+Brovallen
+SW2JO
+==============================
+Samuel Adams
+C654321
+History
+HS6540
+3
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Morgan Parry
+C845529
+Music
+MU8743
+45a
+Big Street
+Bangor
+BN7GH
+==============================
+Ajay Ghale
+C620572
+Politics
+PO8365
+55
+The Way
+Balangar
+BN8FG
+==============================
+Zofia Bosak
+C875321
+Politics
+PO8365
+12c
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Ela Bosak
+C875320
+Fine Art
+FA6381
+11b
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Kenneth Steel
+C432098
+Neuroscience
+BN7926
+12e
+Senghenydd Court
+Cathays
+CF3PM
+==============================
+Test Testington
+C123456
+Testing
+TE9999
+1a
+Beep Street
+Testsworth
+TE5TS
+==============================
+Enter command: 
+
+
+Using Command: exit 

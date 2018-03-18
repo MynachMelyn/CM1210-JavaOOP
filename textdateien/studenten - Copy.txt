@@ -1,6 +1,0 @@
-Adam Burgess|C123456|ComputerScience|CM2536|16|Stuttgarter Straße|Cathays|CF2HR
-Joe Penning|C078992|Engineering|EN2337|1|Charcoal Street|Brovallen|SW2JO
-Samuel Adams|C654321|History|HS6540|3|Senghenydd Court|Cathays|CF3PM
-Morgan Parry|C845529|Music|MU8743|45a|Big Street|Bangor|BN7GH
-Kossak Alshamid|C854232|Music|MU8742|4c|Small Street|Leamington Spa|CO9CM
-Ajay Ghale|C620572|Politics|PO8365|55|The Way|Balangar|BN8FG

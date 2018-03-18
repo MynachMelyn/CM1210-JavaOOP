@@ -12,12 +12,12 @@ import java.util.ArrayList;
 public class Database {
 
     private ArrayList<StudentInfo> studentList;
-    private InfoWriter readerWriter;
+    private InfoReader readerWriter;
     private final String assetFolder = "./textdateien/";
     private String loadedFile = null;
 
     public Database() {
-        readerWriter = new InfoWriter();
+        readerWriter = new InfoReader();
         studentList = new ArrayList<>();
     }
 
@@ -28,20 +28,6 @@ public class Database {
 
     public ArrayList<StudentInfo> getStudentList() {
         return studentList;
-    }
-
-    /**
-     * Displays all students matching the command. If no command is provided, all are shown.
-     * @param command String command to be used as filter. Applicable to fields: Course Name, House Number, Street Name, Town, and Postcode.
-     */
-    public void displayStudentDetails(String command) {
-        // format:
-        // <field>:<string>
-        // (not case sensitive)
-    }
-
-    public void deleteInfo(int index) {
-
     }
 
     public void addStudent(String[] info) {
@@ -63,9 +49,11 @@ public class Database {
 
     public void readFile(String file) {
         ArrayList<String> content = readerWriter.readFile(assetFolder + file);
-        studentList.clear();
-        content.forEach(this::addToList);
-        loadedFile = file;
+        if(content != null) {
+            studentList.clear();
+            content.forEach(this::addToList);
+            loadedFile = file;
+        }
     }
 
     private void addToList(String line) {
@@ -90,8 +78,13 @@ public class Database {
         }
     }
 
-    private void saveFile() {
-        StringBuffer content = new StringBuffer();
+    public void saveFile() {
+        // gets the "filename.txt" and splits it into "filename" and "txt" for the createFile method.
+        createFile(loadedFile.split("\\.")[0], loadedFile.split("\\.")[1]);
+    }
+
+    public void createFile(String location, String format) {
+        StringBuilder content = new StringBuilder();
         int j=0;
         for (StudentInfo student : studentList) {
             int i=0;
@@ -99,25 +92,34 @@ public class Database {
                 content.append(buffer.toString() + ((i == student.getInfo().size()-1) ? "" : "|") );
                 i++;
             }
-            // Only put a newline char if one isn't on the final line of the file
-            content.append((j==studentList.size()-1) ? "" : "\n");
+            // Only put newline/CR char if one isn't on the final line of the file
+            content.append((j==studentList.size()-1) ? "" : "\r\n");
             j++;
         }
-        if(loadedFile.contains(".txt")){
+
+        if(format.contains("bin")){
             try {
-                Files.write(Paths.get(assetFolder + loadedFile), content.toString().getBytes());
+                Files.write(Paths.get(assetFolder + location + "." + format), content.toString().getBytes());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(loadedFile.contains(".bin")) {
+        } else if(format.contains("txt")) {
+            OutputStream output = null;
             try {
-                OutputStream output = new BufferedOutputStream(new FileOutputStream(Paths.get(assetFolder + loadedFile).toString(), false));
+                output = new BufferedOutputStream(new FileOutputStream(Paths.get(assetFolder + location + "." + format).toString(), false));
                 output.write(content.toString().getBytes(StandardCharsets.UTF_8));
             } catch (IOException e) {
                 e.printStackTrace();
+                System.out.println("IO Error occurred when writing file.");
+            } finally {
+                try {
+                    output.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         } else {
-            System.out.println("Error saving file; invalid file name.");
+            System.out.println("Error saving file; invalid file type.");
         }
     }
 }

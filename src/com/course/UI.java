@@ -7,14 +7,26 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class UI {
+
+    public boolean testing = false;
+
     public void mainLoop() {
         Database database = new Database();
         String[] commands = {""};
         Scanner s = new Scanner(System.in);
 
+        System.out.println("Commands are comma separated.\n");
         while(!commands[0].contains("exit")) {
             System.out.println("Enter command: \n");
-            commands = s.nextLine().split("\\s+");
+            commands = s.nextLine().split(",");
+
+            if(testing) {
+                System.out.print("\nUsing Command: ");
+                for(String commandPartition : commands) {
+                    System.out.print(commandPartition + " ");
+                }
+                System.out.println();
+            }
 
             switch (commands[0].toLowerCase()) {
                 case "load":
@@ -31,15 +43,21 @@ public class UI {
 
                 case "display":
                     if(commands.length == 4) {
-                        if(commands[1].matches("\\d+") && commands[3].matches("\\d+") && commands[2].toLowerCase() == "to") {
-                            // display X to Y indices
+                        if(commands[1].matches("\\d+") && commands[3].matches("\\d+") && commands[2].toLowerCase().equals("to")) {
+                            for(StudentInfo info : database.getStudentList()) {
+                               if(database.getStudentList().indexOf(info) >= Integer.valueOf(commands[1]) && database.getStudentList().indexOf(info) <= Integer.valueOf(commands[3])) {
+                                    for(StringBuffer item : info.getInfo()){
+                                        System.out.println(item);
+                                    }
+                                    System.out.println("==============================");
+                                }
+                            }
                         }
                     } else if (commands.length == 3) {
                         switch (commands[1]) {
                             case "course":
                                 for(StudentInfo info : database.getStudentList()) {
                                     if(info.getCourseName().toLowerCase().equals(commands[2].toLowerCase())) {
-                                        System.out.println("==============================");
                                         for(StringBuffer item : info.getInfo()){
                                             System.out.println(item);
                                         }
@@ -50,7 +68,6 @@ public class UI {
                             case "house":
                                 for(StudentInfo info : database.getStudentList()) {
                                     if(info.getHouseNumber().toLowerCase().equals(commands[2].toLowerCase())) {
-                                        System.out.println("==============================");
                                         for(StringBuffer item : info.getInfo()){
                                             System.out.println(item);
                                         }
@@ -61,7 +78,6 @@ public class UI {
                             case "street":
                                 for(StudentInfo info : database.getStudentList()) {
                                     if(info.getStreetName().toLowerCase().equals(commands[2].toLowerCase())) {
-                                        System.out.println("==============================");
                                         for(StringBuffer item : info.getInfo()){
                                             System.out.println(item);
                                         }
@@ -72,7 +88,6 @@ public class UI {
                             case "town":
                                 for(StudentInfo info : database.getStudentList()) {
                                     if(info.getTown().toLowerCase().equals(commands[2].toLowerCase())) {
-                                        System.out.println("==============================");
                                         for(StringBuffer item : info.getInfo()){
                                             System.out.println(item);
                                         }
@@ -83,7 +98,6 @@ public class UI {
                             case "postcode":
                                 for(StudentInfo info : database.getStudentList()) {
                                     if(info.getPostcode().toLowerCase().equals(commands[2].toLowerCase())) {
-                                        System.out.println("==============================");
                                         for(StringBuffer item : info.getInfo()){
                                             System.out.println(item);
                                         }
@@ -104,9 +118,12 @@ public class UI {
                     }
                     break;
                 case "create":
-                    if(commands.length == 2){
-                        // create file with commands[1]
+                    if(commands.length == 3){
+                        database.createFile(commands[1],commands[2]);
                     }
+                    break;
+                case "save":
+                    database.saveFile();
                     break;
                 case "add":
                     StudentInfo tempStudent = new StudentInfo();
@@ -128,17 +145,34 @@ public class UI {
                         System.out.println("Enter postcode:");
                         tempStudent.setPostcode(s.nextLine());
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                     }
-                    database.addStudent(tempStudent.getInfo().toArray(new String[tempStudent.getInfo().size()]));
+
+                    String[] toAdd = new String[tempStudent.getInfo().size()];
+                    int i=0;
+                    for(StringBuffer str : tempStudent.getInfo()) {
+                        toAdd[i] = str.toString();
+                        i++;
+                    }
+                    database.addStudent(toAdd);
+
                     break;
                 case "delete":
                     if(commands.length > 1) {
                         if(commands[1].matches("\\d+")){
                             // delete at commands[1]
-                            database.getStudentList().remove((int) Integer.getInteger(commands[1]));
+                            try {
+                                int id = Integer.valueOf(commands[1]);
+                                database.getStudentList().remove(id);
+                            } catch (ArrayIndexOutOfBoundsException e) {
+                                System.out.println("Index provided is not within the list of students.");
+                            }
                         }
                     }
+                case "exit":
+                    break;
+                default:
+                    System.out.println("Command not recognised.\r\n");
             }
         }
     }

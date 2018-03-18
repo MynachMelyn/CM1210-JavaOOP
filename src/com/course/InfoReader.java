@@ -6,17 +6,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.stream.Stream;
 
-public class InfoWriter {
-
-    public boolean binaryFormat = false;
-
-    public void writeFile(String content, String filePath) {
-
-    }
-
-    public void writeFileBoolean(String content, String filePath) {
-
-    }
+public class InfoReader {
 
     public ArrayList<String> readFile(String filePath) {
         try (Stream<String> stream = Files.lines(Paths.get(filePath))) {
@@ -26,7 +16,7 @@ public class InfoWriter {
             return contents;
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error; file does not exist.");
         }
         // if failure:
         return null;
