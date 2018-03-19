@@ -38,7 +38,7 @@ public class Game {
             }
             System.out.println("Enter coordinates to swap (i j U/R/D/L):");
             String command = scanner.nextLine();
-            if (command.matches("\\d \\d [URDL]")) {
+            if (command.matches("\\d+ \\d+ [URDL]")) {
                 String[] commands = command.split("\\s");
                 int i = Integer.parseInt(commands[0]);
                 int j = Integer.parseInt(commands[1]);
