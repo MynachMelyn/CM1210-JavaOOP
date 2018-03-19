@@ -1,4 +1,7 @@
 package Life.Eukarya.Fungi.Agaricales;
 
-public class GhostFungus {
+public class GhostFungus extends Agaric {
+    public GhostFungus() {
+        super();
+    }
 }

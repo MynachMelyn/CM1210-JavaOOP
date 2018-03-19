@@ -1,4 +1,9 @@
 package Life.Eukarya.Fungi.Agaricales;
 
-public class Agaric {
+import Life.Eukarya.Fungi.Fungus;
+
+public abstract class Agaric extends Fungus {
+    public Agaric() {
+        super();
+    }
 }

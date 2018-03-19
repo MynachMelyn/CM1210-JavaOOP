@@ -1,4 +1,7 @@
 package Life.Eukarya.Animalia.Arthropoda.Crustacea;
 
-public class GhostCrab {
+public class GhostCrab extends Crustacean {
+    public GhostCrab() {
+        super();
+    }
 }

@@ -1,4 +1,7 @@
 package Life.Eukarya.Plantae.Gymnosperma;
 
-public class Pine {
+public class Pine extends Gymnosperm {
+    public Pine() {
+        super();
+    }
 }

@@ -1,4 +1,10 @@
 package Life.Eukarya.Animalia.Arthropoda;
 
-public class Arthropod {
+import Life.Eukarya.Animalia.Animal;
+
+public abstract class Arthropod extends Animal {
+    public Arthropod() {
+        super(true);
+        setLegs(8);
+    }
 }

@@ -1,4 +1,9 @@
 package Life.Eukarya.Plantae.Angiosperma;
 
-public class Angiosperm {
+import Life.Eukarya.Plantae.Plant;
+
+public abstract class Angiosperm extends Plant {
+    public Angiosperm() {
+        super();
+    }
 }

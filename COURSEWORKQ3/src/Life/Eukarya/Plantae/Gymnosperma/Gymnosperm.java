@@ -1,4 +1,9 @@
 package Life.Eukarya.Plantae.Gymnosperma;
 
-public class Gymnosperm {
+import Life.Eukarya.Plantae.Plant;
+
+public abstract class Gymnosperm extends Plant {
+    public Gymnosperm() {
+        super();
+    }
 }
